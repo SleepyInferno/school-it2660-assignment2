@@ -41,9 +41,23 @@ public class driver20 {
 	    		i++;
 	    	} while (i < dataLength);
 */	    
-		 System.out.println("How big is the data set?: ");
-		 int dataLength = userInput.nextInt();
-		 SortedArray sort = new SortedArray (dataLength);
+		 //System.out.println("How big is the data set?: ");
+		 //int dataLength = userInput.nextInt();
+		 SortedArray sort = new SortedArray (6);
+		 System.out.println("Insert Method" + "\n");
+	     sort.insert(new StudentListings("Z", 31, 2.5));
+	     sort.insert(new StudentListings("P", 32, 3.0));
+	     sort.insert(new StudentListings("Q", 33, 3.5));
+	     sort.insert(new StudentListings("H", 33, 3.5));
+	     sort.insert(new StudentListings("B", 33, 3.5));
+	     sort.insert(new StudentListings("R", 33, 3.5));
+	     sort.arraySort(sort.data);
+	        for (StudentListings student : sort.data)
+	        {
+	            System.out.println(student.output());
+	        }
+
+		 
 		 StudentListings[] student = new StudentListings[3];
 	     StudentListings brandon = new StudentListings("Brandon", 1, 3.2);
 	     StudentListings crystal = new StudentListings("Crystal", 2, 3.8);

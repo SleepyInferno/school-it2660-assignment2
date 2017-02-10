@@ -54,6 +54,11 @@ public class driver20 {
 	     student[1] = crystal;
 	     student[2] = jim;
 	     System.out.println(sort.insert(jim));
+	     for (int i = 0; i < student.length; i++)
+	     {
+	    	 System.out.println(sort[i].toString());
+	     }
+	     //System.out.println(sort.output("jim"));
 	     
 /*	     StudentListings brandonclone = brandon.deepCopy();
 	     brandon.compareTo("Brandon");

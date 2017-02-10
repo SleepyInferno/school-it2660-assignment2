@@ -23,6 +23,7 @@ public class SortedArray
          if(data.length == 0)
          {
             student [count] = newStudent;
+            isInsert = 0;
          }
          for (int i = 0; i < data.length; i++)
          {

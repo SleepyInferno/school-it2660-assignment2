@@ -2,32 +2,43 @@
 
 public class SortedArray
 {
-	private int next;
-    private int size;
-    private StudentListings[ ] data;
+	int next;
+    int size;
+    StudentListings[ ] data;
     
     
     public SortedArray(int i)
     {   size = i;
         data = new StudentListings[size];
      }
-    public boolean insert(StudentListings targetKey)
+    public boolean insert(StudentListings newStudent)
     {
+    	int isInsert = -1;
     	StudentListings[] student = new StudentListings[size + 1];
-    	if(student.length >= size)
+    	if(student.length > size)
     	{
             return false;
     	}
-         data[next]= targetKey.deepCopy( );
-         if(data[next] == null)
+    	int count = 0;
+         if(data.length == 0)
          {
-            return false;
+            student [count] = newStudent;
          }
-         else
+         for (int i = 0; i < data.length; i++)
          {
-         next = next + 1; 
+        	 student[count] = data[i];
+        	 count++;
+        	 if (isInsert == -1)
+        	 {
+        		 student[count] = newStudent;
+        		 isInsert = 0;
+        		 count++;
+        	 }
+         }
+         
+         data = student; 
          return true;
-         }
+         
     }
 	public StudentListings[] arraySort(StudentListings list[])
 	{
@@ -57,12 +68,10 @@ public class SortedArray
         while ( i < next && !(data[i].compareTo(targetKey) == 0))
         {  i++;
         }
-      if(i== next) // node not found
+      if(i== next)
           return null;
-      //deep copy the node's information into the client's node
          node = data[i].deepCopy( );
-      // move the node up one position in the array, unless it is the first node
-         if(i != 0) // bubble-up accessed node
+         if(i != 0) 
         {   temp = data[i-1];
              data[i-1] = data[i];
              data[i] = temp;
@@ -71,8 +80,8 @@ public class SortedArray
     } // end of fetch method
     
     public boolean delete(String targetKey) {
-        //boolean isDeleted = false;
         int isFound = -1;
+        int count = 0;
         StudentListings[] newStudent = new StudentListings[data.length - 1];
         
         for (StudentListings student : data) {
@@ -80,16 +89,17 @@ public class SortedArray
             if (student.name.equals(targetKey)) {
             	isFound = 0;
                 //isDeleted = true;
-                next++;
+                count++;
             }
             
             if (isFound < 0 && next < data.length - 1) {
-                newStudent[next] = data[next];
+                newStudent[next] = data[count];
+                count++;
                 next++;
             }
-            nodeDeleted = false;
+            isFound = -1;
         }
-            students = newArray;
+            data = newStudent;
             return true;
         }
     

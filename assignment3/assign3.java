@@ -10,6 +10,7 @@
 import java.util.*;
 public class assign3 {
 	public static void main(String[] args) {
+
 		assignmentInfo();
 		testing();
 		input();
@@ -22,6 +23,17 @@ public class assign3 {
 	}
 	public static void input() {
 		Scanner userInput = new Scanner(System.in);
+		String mathexpression;
+		String thisToken;
+		postFixedStack newStack = new postFixedStack();
+		System.out.println("Enter an expression in the post-fixed notation: ");
+		/*try {
+			
+		}*/
+		mathexpression = userInput.nextLine();
+		System.out.println(newStack.expressionParse(mathexpression));
+		
+		
 	}
 	
 	public static void testing() {

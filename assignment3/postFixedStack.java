@@ -14,7 +14,6 @@ public class postFixedStack {
         int[] temp = new int[newArray.length + 1];
         for (int i = 0; i < newArray.length; i++) {
             temp[i] = newArray[i];
-            System.out.println(temp[i]);
         }
         temp[temp.length - 1] = n;
         newArray = temp;
@@ -23,10 +22,6 @@ public class postFixedStack {
     }
     
     public int pop() {
-        if(newArray.length == 0)    {
-            System.out.println("No values to pop");
-            System.exit(0);
-        }
         int newPop = newArray[newArray.length-1];
         int[] temp = new int[newArray.length - 1];
         for (int i = 0; i < newArray.length-1; i++) {

@@ -29,11 +29,11 @@ public class assign3 {
 		String thisToken;
 		postFixedStack newStack = new postFixedStack();
 		// Testing the '*' operator
-		mathexpression = "24 85 +";
+		mathexpression = "8 5 *";
 		System.out.println("Calculating the following expression: " + mathexpression);
 		System.out.println(newStack.expressionParse(mathexpression));
 		// Testing the '/' operator
-		mathexpression = "24 85 +";
+		mathexpression = "5 10 /";
 		System.out.println("Calculating the following expression: " + mathexpression);
 		System.out.println(newStack.expressionParse(mathexpression));
 		// Testing the '+' operator
@@ -41,7 +41,7 @@ public class assign3 {
 		System.out.println("Calculating the following expression: " + mathexpression);
 		System.out.println(newStack.expressionParse(mathexpression));
 		// Testing the '-' operator
-		mathexpression = "24 85 +";
+		mathexpression = "24 85 -";
 		System.out.println("Calculating the following expression: " + mathexpression);
 		System.out.println(newStack.expressionParse(mathexpression));
 		

@@ -24,21 +24,16 @@ public class assign3 {
 	public static void input() {
 		Scanner userInput = new Scanner(System.in);
 		String mathexpression;
-		String thisToken;
 		postFixedStack newStack = new postFixedStack();
 		System.out.println("Enter an expression in the post-fixed notation: ");
-		/*try {
-			
-		}*/
+		// This will grab the user's input
 		mathexpression = userInput.nextLine();
+		// This will pass the string into the parse function of the stack class
 		System.out.println(newStack.expressionParse(mathexpression));
-		
-		
 	}
 	
 	public static void testing() {
 		String mathexpression;
-		String thisToken;
 		postFixedStack newStack = new postFixedStack();
 		// Testing the '*' operator
 		mathexpression = "8 5 *";
